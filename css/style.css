@@ -1,0 +1,87 @@
+body {
+    text-align: center;
+    background-image: url(../img/space.jpg);
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(250, 234, 9);
+}
+
+.score{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 400px;
+}
+
+.player{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right:5px;
+    width: 150px;
+    height: 70px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #ecececbb;
+}
+
+#scoreP1, #scoreP2{
+    color: #000000;
+}
+
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(153, 209, 209);
+    border: 1px solid black;
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.938);
+    display: inline-block;
+}
+
+.o{
+    position: relative;
+}
+
+.o:after {
+    position: absolute;
+    content: "\1F468";
+    font-size: 50px;
+    line-height: 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.x{
+    position: relative;
+}
+
+.x:after {
+    position: absolute;
+    content: "\1F47D";
+    font-size: 50px;
+    line-height: 100px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#refresh {
+    box-sizing: border-box;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+#refresh:hover {
+    color: rgb(153, 42, 187);
+}
