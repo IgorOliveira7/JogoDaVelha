@@ -2,6 +2,7 @@ let board = ['', '', '', '', '', '', '', '', ''];
 let playerTime = 0;
 let symbols = ['o', 'x'];
 let gameOver = false;
+let draw = false;
 let scores = [0, 0];
 let winStates = [
   [0, 1, 2],
@@ -83,27 +84,22 @@ let refresh = () => {
 
   board = ['', '', '', '', '', '', '', '', ''];
   playerTime = 0;
+  draw = false;
   gameOver = false;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isDraw () {
+  if (gameOver || draw ) {
+    return;
+  }
+  for (let i = 0; i < board.length; i++){
+    if(board[i] === "" || gameOver) {
+      return false;
+    }
+  }
+  draw = true;
+  return true;
+}
 
 function handleClick (event) {
   let square = event.target;
@@ -121,7 +117,11 @@ function handleClick (event) {
 
       refreshButton.className = "display";
     }, 10);
-  };
+  } else if (isDraw()){
+    setTimeout(() => {
+      alert("Empate!")
+    }, 10)
+  }
 
   updateSquares();   
 }
